@@ -3,7 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
 {
     options.Cookie.Name = "MyCookieAuth"; //with this name the auth handler will know which cookie to look for (we should use a const to avoid typos)
 }
@@ -24,6 +24,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication(); //adds the authentication middleware to the pipeline, this uses the config of the cookie thats on the services section
 app.UseAuthorization();
 
 app.MapRazorPages();

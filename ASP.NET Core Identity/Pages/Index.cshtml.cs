@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 namespace ASP.NET_Core_Identity.Pages
 {
@@ -14,7 +15,10 @@ namespace ASP.NET_Core_Identity.Pages
 
         public void OnGet()
         {
+        }
 
+        public void OnPost()
+        {
         }
     }
 }
